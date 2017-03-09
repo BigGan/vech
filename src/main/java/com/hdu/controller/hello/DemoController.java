@@ -4,15 +4,20 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.log4j.Logger;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.pagehelper.PageHelper;
+import com.hdu.config.GlobalDefaultExceptionHandler;
 import com.hdu.model.Demo;
 import com.hdu.service.DemoService;
 
 @RestController
 public class DemoController {
+	
+	private static Logger log = Logger.getLogger(DemoController.class);
+	
 	@Resource
 	private DemoService demoService;
 	
