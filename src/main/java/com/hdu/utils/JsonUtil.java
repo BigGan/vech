@@ -1,6 +1,5 @@
 package com.hdu.utils;
 
-
 import java.text.SimpleDateFormat;
 
 import com.fasterxml.jackson.databind.ObjectMapper;

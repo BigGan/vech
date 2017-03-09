@@ -94,7 +94,22 @@
 	    <groupId>log4j</groupId>
 	    <artifactId>log4j</artifactId>
 	</dependency>	
+	  
+	<dependency>
+	    <groupId>org.apache.commons</groupId>
+	    <artifactId>commons-lang3</artifactId>
+	    <version>3.4</version>
+	</dependency>
+	
+	
+	<dependency>
+	    <groupId>commons-net</groupId>
+	    <artifactId>commons-net</artifactId>
+	    <version>1.4.1</version>
+	</dependency>
+	
   </dependencies>
+
   
   
   <build>

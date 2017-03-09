@@ -1,14 +1,15 @@
-/*package com.hdu.utils;
+package com.hdu.utils;
 
 
-import org.slf4j.Logger;
 
 
 import java.security.MessageDigest;
 
+import org.apache.log4j.Logger;
+
 public class Md5Util {
 
-    private static Logger logger= LogUtil.getLogger(LogUtil.frameName);
+    private static Logger logger= Logger.getLogger(Md5Util.class);
 
     private static  byte[] hash(byte[] bytes, byte[] salt, int hashIterations) throws Exception {
         MessageDigest digest =MessageDigest.getInstance("md5");
@@ -75,4 +76,3 @@ public class Md5Util {
 
 
 }
-*/
