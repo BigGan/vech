@@ -11,19 +11,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.TransactionManagementConfigurer;
 
 import com.alibaba.druid.pool.DruidDataSourceFactory;
 import com.github.pagehelper.PageHelper;
 
 @Configuration
 @MapperScan("com.hdu.mapper")
-public class MyBatisConfiguration {
+@EnableTransactionManagement //支持事务
+public class MyBatisConfiguration{
 	
 		 @Autowired
 		 private Environment env;
 	
-		  @Bean
+		 @Bean(name = "getDataSource")
 	      public DataSource getDataSource() throws Exception{
 	          Properties props = new Properties();
 	          props.put("driverClassName", env.getProperty("jdbc.driverClassName"));
@@ -47,12 +51,14 @@ public class MyBatisConfiguration {
 	     }
 		 
 
-	    @Bean
+	    @Bean(name = "sqlSessionFactory")
 	    public SqlSessionFactory sqlSessionFactory(DataSource ds) throws Exception{
 		    SqlSessionFactoryBean fb = new SqlSessionFactoryBean();
 		    fb.setDataSource(ds);//指定数据源(这个必须有，否则报错)
 		    //fb.setMapperLocations(new PathMatchingResourcePatternResolver().getResources(env.getProperty("mybatis.mapperLocations")));//指定xml文件位置
 		    return fb.getObject();
 	        }
-		  
+
+
+	
 }

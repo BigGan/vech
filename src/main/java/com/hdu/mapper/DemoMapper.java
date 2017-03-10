@@ -1,14 +1,15 @@
 package com.hdu.mapper;
 
+
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import com.hdu.eneity.Demo;
-
+ 
 public interface DemoMapper {
 	//#{name}:参数占位符
 	@Select("select *from Demo where name=#{name}")
