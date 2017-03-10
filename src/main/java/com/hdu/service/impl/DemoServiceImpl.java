@@ -10,6 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.hdu.mapper.DemoMapper;
 import com.hdu.model.Demo;
+import com.hdu.model.ResultModel;
+import com.hdu.model.ReturnModel;
 import com.hdu.service.DemoService;
 
 @Service
@@ -26,6 +28,14 @@ public class DemoServiceImpl implements DemoService{
 	@Transactional//添加事务.
 	public void save(Demo demo) {
 		demoMappper.save(demo);
+	}
+
+	@Override
+	public ResultModel getDemo() {
+		 ReturnModel returnModel=new ReturnModel();
+		 List<Demo> list=demoMappper.getNameDemo();
+		 returnModel.setCode(200).setObj(list);
+		 return returnModel;
 	}
 
 }

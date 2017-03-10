@@ -122,11 +122,5 @@ public class ReturnModel<T> extends ObjectModelImpl<T> implements ResultModel<T>
         return this;
     }
 
-	@Override
-	public T getObj() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 }

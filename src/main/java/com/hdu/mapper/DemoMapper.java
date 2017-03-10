@@ -20,6 +20,10 @@ public interface DemoMapper {
 	@Select("select name from Demo where id = #{id}")
 	public String getNameById(long id);
 
+	
+	@Select("select * from Demo")
+	public List<Demo> getNameDemo();
+	
 	/**
 	 * 保存数据.
 	 */

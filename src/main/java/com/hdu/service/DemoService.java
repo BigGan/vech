@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.hdu.mapper.DemoMapper;
 import com.hdu.model.Demo;
+import com.hdu.model.ResultModel;
 
 
 public interface DemoService {
@@ -16,4 +17,5 @@ public interface DemoService {
 	
 	public void save(Demo demo);
 	
+	public ResultModel getDemo();
 }

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.github.pagehelper.PageHelper;
 import com.hdu.config.GlobalDefaultExceptionHandler;
 import com.hdu.model.Demo;
+import com.hdu.model.Message;
 import com.hdu.service.DemoService;
 
 @RestController
@@ -38,4 +39,10 @@ public class DemoController {
 		demoService.save(demo);
 		return demo;
 	}
+	
+	@RequestMapping("/query")
+	public Message query(){
+		return 	demoService.getDemo().toMessage();
+	}
+	
 }

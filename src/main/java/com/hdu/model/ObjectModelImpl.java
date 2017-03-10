@@ -11,7 +11,7 @@ public class ObjectModelImpl<T> implements ObjectModel<T>{
 	}
 
 	@Override
-	public Model setObj(T var1) {
+	public Model setObj(T obj) {
 		 this.obj=obj;
 	     return this;
 	}
