@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.hdu.eneity.Demo;
 import com.hdu.mapper.DemoMapper;
-import com.hdu.model.Demo;
 import com.hdu.model.ResultModel;
 
 

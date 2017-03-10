@@ -1,4 +1,4 @@
-package com.hdu.model;
+package com.hdu.eneity;
 
 public class Demo {
 	private int id;

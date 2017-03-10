@@ -12,10 +12,9 @@ import com.alibaba.fastjson.support.config.FastJsonConfig;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 /**
  * Hello world!
- *
  */
 @SpringBootApplication
-@MapperScan("com.hdu.mapper")
+//@MapperScan("com.hdu.mapper")
 public class App 
 {
 	@Bean

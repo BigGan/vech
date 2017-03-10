@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
-import com.hdu.model.Demo;
+import com.hdu.eneity.Demo;
 
 public interface DemoMapper {
 	//#{name}:参数占位符
@@ -20,8 +20,7 @@ public interface DemoMapper {
 	@Select("select name from Demo where id = #{id}")
 	public String getNameById(long id);
 
-	
-	@Select("select * from Demo")
+	//@Select("select * from Demo")
 	public List<Demo> getNameDemo();
 	
 	/**
