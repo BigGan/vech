@@ -11,17 +11,17 @@ import org.springframework.stereotype.Component;
 import com.hdu.eneity.Demo;
  
 public interface DemoMapper {
-	//#{name}:参数占位符
-	@Select("select *from Demo where name=#{name}")
+
+	@Select("select * from Demo where name=#{name}")
 	public List<Demo> likeName(String name);
 	
-	@Select("select *from Demo where id = #{id}")
+	@Select("select * from Demo where id = #{id}")
 	public Demo getById(long id);
 	
 	@Select("select name from Demo where id = #{id}")
 	public String getNameById(long id);
 
-	//@Select("select * from Demo")
+
 	public List<Demo> getNameDemo();
 	
 	/**

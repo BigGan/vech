@@ -15,6 +15,7 @@ public class GlobalDefaultExceptionHandler {
 	@ExceptionHandler(value = Exception.class)
 	@ResponseBody
 	public String defaultExceptionHandler(HttpServletRequest req, Exception e)  {
+		log.info(e);
 		return "对不起，服务器繁忙.....";
 	}
 }
