@@ -22,7 +22,7 @@ import com.github.pagehelper.PageHelper;
 
 @Configuration
 @MapperScan("com.hdu.mapper")
-public class MyBatisConfiguration{
+public class MyBatisConfiguration {
 	
 		 @Autowired
 		 private Environment env;

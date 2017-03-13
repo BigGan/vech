@@ -1,4 +1,4 @@
-package com.hdu.config;
+package com.hdu.config.ExceptionHandler;
 
 import javax.servlet.http.HttpServletRequest;
 

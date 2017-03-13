@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.github.pagehelper.PageHelper;
-import com.hdu.config.GlobalDefaultExceptionHandler;
+import com.hdu.config.ExceptionHandler.GlobalDefaultExceptionHandler;
 import com.hdu.eneity.Demo;
 import com.hdu.model.Message;
 import com.hdu.service.DemoService;
