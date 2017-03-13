@@ -12,6 +12,6 @@ public class SchedulingConfig {
 	
 	@Scheduled(cron = "0/5 * * * * ?") // 每5秒执行一次
     public void scheduler() {
-        System.out.println(new Date());
+        //System.out.println(new Date());
     }
 }

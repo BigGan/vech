@@ -30,10 +30,11 @@ public class MyBatisConfiguration {
 		 @Bean
 	      public DataSource getDataSource() throws Exception{
 	          Properties props = new Properties();
-	          props.put("driverClassName", env.getProperty("jdbc.driverClassName"));
-	          props.put("url", env.getProperty("jdbc.url"));
-	          props.put("username", env.getProperty("jdbc.username"));
-	          props.put("password", env.getProperty("jdbc.password"));
+	          props.put("driverClassName", env.getProperty("spring.datasource.driverClassName"));
+	          props.put("url", env.getProperty("spring.datasource.url"));
+	          props.put("username", env.getProperty("spring.datasource.username"));
+	          props.put("password", env.getProperty("spring.datasource.password"));
+	          props.put("maxActive", env.getProperty("spring.datasource.maxActive"));
 	          return DruidDataSourceFactory.createDataSource(props);
 	      }
 		 
