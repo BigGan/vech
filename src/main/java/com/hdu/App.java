@@ -1,22 +1,23 @@
 package com.hdu;
 
-import javax.servlet.MultipartConfigElement;
-
+import com.alibaba.fastjson.serializer.SerializerFeature;
+import com.alibaba.fastjson.support.config.FastJsonConfig;
+import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.boot.context.embedded.MultipartConfigFactory;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.converter.HttpMessageConverter;
 
-import com.alibaba.fastjson.serializer.SerializerFeature;
-import com.alibaba.fastjson.support.config.FastJsonConfig;
-import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import javax.servlet.MultipartConfigElement;
 
 
 @SpringBootApplication
+@ServletComponentScan
 @ComponentScan(basePackages={"com.ghj","com.hdu"})
 public class App 
 {
