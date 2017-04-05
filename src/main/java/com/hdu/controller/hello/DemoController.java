@@ -21,7 +21,20 @@ public class DemoController {
 	
 	@Resource
 	private DemoService demoService;
-	
+
+
+	@RequestMapping("/test")
+	public String test(){
+		Demo loaded = demoService.getById(1l);
+		System.out.println("loaded="+loaded);
+		Demo cached = demoService.getById(1l);
+		System.out.println("cached="+cached);
+		loaded = demoService.getById(2l);
+		System.out.println("loaded2="+loaded);
+		return"ok";
+
+	}
+
 	@RequestMapping("/likeName")
 	public List<Demo> likeName(String name){
 		/*

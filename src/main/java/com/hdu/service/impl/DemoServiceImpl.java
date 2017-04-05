@@ -5,6 +5,9 @@ import java.util.List;
 import javax.annotation.Resource;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +22,24 @@ public class DemoServiceImpl implements DemoService{
 
 	@Resource
 	private DemoMapper demoMappper;
-	
+
+	@Resource
+	private RedisTemplate<String,String> redisTemplate;
+
+	@Override
+	public Demo getById(Long id) {
+		System.err.println("DemoServiceImpl.getById()=========从数据库中进行获取的....id="+id);
+		Demo demo=demoMappper.getById(id);
+		return  demo;
+	}
+
+	@Override
+	public void test() {
+		ValueOperations<String,String> valueOperations=redisTemplate.opsForValue();
+		valueOperations.set("mykey4", "random1="+Math.random());
+		System.out.println(valueOperations.get("mykey4"));
+	}
+
 	public List<Demo> likeName(String name) {
 		// TODO Auto-generated method stub
 		return null;

@@ -13,6 +13,10 @@ import com.hdu.model.ResultModel;
 
 public interface DemoService {
 
+	public Demo getById(Long id);
+
+	public void test();
+
 	public List<Demo> likeName(String name);
 	
 	public void save(Demo demo);
